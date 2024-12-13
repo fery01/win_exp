@@ -1,0 +1,13 @@
+<?php
+
+use CodeIgniter\Router\RouteCollection;
+
+/**
+ * @var RouteCollection $routes
+ */
+$routes->get('/', function () {
+    return view('folder_view');  // Menampilkan halaman utama (view)
+});
+
+$routes->get('/folders', 'Folder::getAllFolders');  // Rute API untuk mendapatkan semua folder
+$routes->get('/subfolders/(:num)', 'Folder::getSubfolders/$1');  // Rute API untuk mendapatkan subfolder berdasarkan parentId
